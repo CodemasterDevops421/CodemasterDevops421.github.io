@@ -1,12 +1,8 @@
-// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// user/organization site must use base: '/'
 export default defineConfig({
   plugins: [react()],
-  base: '/CodemasterDevops421.github.io/',
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets'
-  }
+  base: '/', 
 })
