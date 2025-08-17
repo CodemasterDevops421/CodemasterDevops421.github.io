@@ -4,5 +4,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',           // IMPORTANT for user/organization pages
+  base: '/CodemasterDevops421.github.io/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 })
