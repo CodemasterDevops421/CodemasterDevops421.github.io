@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ring: rgba(31,159,255,0.5);
+}
+
+html, body, #root { height: 100%; }
+
+/***** fancy focus ring *****/
+* { outline-color: var(--ring); }
+
+/***** glass panels *****/
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/***** gradient text *****/
+.gradient-text {
+  background: linear-gradient(90deg, #4bb7ff, #9ae6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
