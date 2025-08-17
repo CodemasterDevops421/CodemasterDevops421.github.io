@@ -1,14 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// For GitHub Pages, set base path automatically from repo name
 const repo = process.env.GITHUB_REPOSITORY?.split('/')?.[1]
+const isUserSite = repo && repo.endsWith('.github.io')
 
 export default defineConfig({
   plugins: [react()],
-  base: repo ? `/${repo}/` : '/',
-  server: {
-    port: 5173,
-    open: true
-  }
+  base: isUserSite ? '/' : `/${repo}/`,
 })
