@@ -1,123 +1,143 @@
 const data = {
   profile: {
-    name: 'Chaitanya',
-    tagline: 'Senior DevOps Engineer · Kubernetes · Terraform · Jenkins · AWS/Azure · Apigee · Apify & AI Automations',
-    about1: `I build reliable, scalable infrastructure and automation. 9+ years across AWS & Azure with Kubernetes, Terraform, Jenkins/GitHub Actions, Helm, and strong focus on cloud security and CI/CD.`,
-    about2: `I also design data scrapers and AI-driven automations (Apify, Make/Activepieces) through QuickLifeSolutions — helping teams remove toil, speed up delivery, and scale confidently.`,
+    name: 'Melam Chaitanya Kumar',
+    tagline: 'Senior DevOps & Cloud Security Engineer · AWS · Azure · Kubernetes · Terraform · CI/CD',
+    about1: 'Senior DevOps and Cloud Security Engineer with 10 years of experience in cloud infrastructure, automation, and security.',
+    about2: 'Specialized in AWS, Azure, Kubernetes (EKS/AKS), Terraform, and CI/CD pipelines. Skilled in Linux system administration, PostgreSQL, Kafka streaming, and Hazelcast caching.'
   },
   skills: {
-    core: [
-      'Kubernetes', 'Docker', 'Helm', 'Terraform', 'Ansible', 'Jenkins', 'GitHub Actions', 'Git', 'Python', 'Java', 'Bash/Powershell', 'Apigee', 'CICD', 'DevSecOps', 'Monitoring', 'SRE'
+    'Cloud Platforms': [
+      'AWS (EKS, EC2, S3, RDS, IAM)',
+      'Azure (AKS, Storage, SQL)'
     ],
-    tooling: [
-      'SonarQube', 'Nexus', 'Gradle', 'Maven', 'Grafana', 'Prometheus', 'CloudWatch', 'GuardDuty', 'WAF', 'Cognito', 'SST/Serverless'
+    'Kubernetes': [
+      'AWS EKS',
+      'Azure AKS',
+      'Helm',
+      'Kustomize',
+      'ArgoCD'
     ],
-    cloud: ['AWS', 'Azure', 'GCP', 'EKS', 'AKS']
+    'Infrastructure Automation': [
+      'Terraform',
+      'Ansible',
+      'CloudFormation'
+    ],
+    'Databases': [
+      'PostgreSQL',
+      'AWS RDS',
+      'Azure SQL',
+      'MongoDB'
+    ],
+    'Streaming & Caching': [
+      'Kafka',
+      'Hazelcast'
+    ],
+    'Operating Systems': [
+      'Linux (Ubuntu, CentOS, RHEL)',
+      'Windows'
+    ],
+    'DevOps Tools': [
+      'Jenkins',
+      'GitHub Actions',
+      'Azure DevOps'
+    ],
+    'Security': [
+      'IAM',
+      'Encryption',
+      'Secrets Management'
+    ],
+    'Observability': [
+      'Prometheus',
+      'AWS CloudWatch'
+    ]
   },
   experience: [
     {
-      year: '2025',
-      role: 'Senior DevOps Engineer',
-      company: 'Infosys · Verizon (Project)',
-      period: '2025 — Present',
-      summary: 'Leading Apigee API proxy CI/CD, hybrid deployments, and platform automation. Developer enablement & security-by-default.',
+      year: '2021',
+      role: 'DevOps Specialist',
+      company: 'PMAM IT Service Private Limited',
+      period: 'Jan 2021 – Present',
+      summary: 'Designed and deployed Kubernetes clusters and automated cloud infrastructure across AWS and Azure.',
       highlights: [
-        'Apigee hybrid deployment pipelines with Jenkins & GitLab','Environment-level config promotion & secrets automation','Standardized branching & release strategy (dev → QA → pre-prod → prod)'
+        'Designed and deployed Kubernetes clusters on AWS EKS and Azure AKS for microservices.',
+        'Automated EC2 instance provisioning and security hardening using Terraform and Ansible.',
+        'Configured and optimized PostgreSQL (AWS RDS, Azure SQL) for high availability.',
+        'Integrated Kafka for real-time streaming and Hazelcast caching for high-performance applications.',
+        'Managed Azure Blob Storage and AWS S3 for scalable object storage.',
+        'Developed CI/CD pipelines using Jenkins and Azure DevOps to automate deployments.',
+        'Implemented role-based access controls (RBAC) and IAM policies for secure cloud operations.'
       ]
     },
     {
-      year: '2023',
-      role: 'DevOps Specialist',
-      company: 'QuickLifeSolutions',
-      period: '2023 — Present',
-      summary: 'Built automation & data products: scrapers, AI agents, and cloud-native services for clients.',
+      year: '2015',
+      role: 'DevOps Engineer',
+      company: "Kohl's Department Stores (Reva Consulting Inc)",
+      period: 'Sept 2015 – May 2020',
+      summary: 'Managed AWS infrastructure and automated deployments with Terraform and Jenkins.',
       highlights: [
-        'Apify actors: Upwork, Google Maps, LinkedIn, Google Hotels, Bing Deals, BestBuy Products','Residential proxy integration & rate-limit resilient crawlers','End-to-end CI/CD with IaC and Kubernetes']
+        'Deployed AWS EKS and EC2-based applications with Terraform.',
+        'Automated Terraform-based deployments with Jenkins pipelines.',
+        'Managed Git, Jenkins, and Kubernetes for automated build and deployment.',
+        'Integrated Kafka-based data pipelines for log aggregation and streaming.',
+        'Configured Nexus Artifactory for storing artifacts and dependencies.',
+        'Developed Ansible playbooks for infrastructure provisioning.'
+      ]
     },
     {
-      year: '2016',
-      role: 'DevOps / Platform Engineering',
-      company: 'Various',
-      period: '2016 — 2023',
-      summary: 'Hands-on with AWS & Azure, containerization, infra automation, and secure pipelines.',
+      year: '2014',
+      role: 'Middleware Engineer',
+      company: 'Reva Consulting Inc',
+      period: 'Feb 2014 – Sept 2015',
+      summary: 'Supported Linux-based WebLogic middleware with automation and security enhancements.',
       highlights: [
-        'Implemented IAM, WAF, GuardDuty; cost & capacity optimization','Git-integrated build & release workflows (Jenkins, CodePipeline)','K8s with Helm; blue/green & canary deployments']
+        'Managed Linux-based WebLogic servers for middleware applications.',
+        'Created Jenkins master-slave configurations for optimized builds.',
+        'Implemented SSL security and high availability for WebLogic.',
+        'Developed Bash and Python scripts for automation.'
+      ]
     }
   ],
   projects: [
     {
-      title: 'CloudWatch Copilot (SaaS)',
-      description: 'AI-powered AWS monitoring & self-healing: anomaly detection, runbook actions, and chat-based incident workflows.',
-      tags: ['AWS', 'CloudWatch', 'EventBridge', 'Lambda', 'IaC', 'AI'],
-      href: 'https://quicklifesolutions.com',
+      title: 'AWS EKS & VPC Setup',
+      description: 'Built AWS EKS clusters with Terraform, configured networking, IAM roles, and Auto Scaling.',
+      tags: ['AWS', 'EKS', 'Terraform', 'VPC', 'IAM'],
+      href: '',
       repo: ''
     },
     {
-      title: 'Apify · Upwork Job Scraper',
-      description: 'Reliable actor scraping Upwork listings with pagination, anti-blocking, and JSON/CSV outputs for lead gen.',
-      tags: ['Apify', 'Crawlee', 'Puppeteer', 'Proxies'],
-      href: 'https://apify.com/dainty_screw',
+      title: 'AWS EC2 & Storage Optimization',
+      description: 'Automated EC2 provisioning with security groups and S3 lifecycle policies.',
+      tags: ['AWS', 'EC2', 'Terraform', 'S3'],
+      href: '',
       repo: ''
     },
     {
-      title: 'LinkedIn Email Scraper (Google search assisted)',
-      description: 'Finds emails from specific LinkedIn profiles via SERP strategies, with rotating residential proxies.',
-      tags: ['Apify', 'Crawlee', 'Puppeteer', 'SERP'],
-      href: 'https://apify.com/dainty_screw',
+      title: 'Kafka Streaming with AWS MSK',
+      description: 'Deployed Kafka clusters on AWS MSK for log processing and real-time analytics.',
+      tags: ['AWS', 'MSK', 'Kafka', 'Streaming'],
+      href: '',
       repo: ''
     },
     {
-      title: 'Google Hotels Scraper (SEO-optimized rewrite)',
-      description: 'Refactored input/output, added limiters (maxPages/maxResults), and improved data quality for SEO.',
-      tags: ['Apify', 'Puppeteer', 'Data Quality'],
-      href: 'https://apify.com/dainty_screw',
-      repo: ''
-    },
-    {
-      title: 'Bing Daily Discounts Scraper',
-      description: 'Daily deals collector built on Crawlee + Chrome template with resilient scheduling.',
-      tags: ['Apify', 'Crawlee', 'Chrome'],
-      href: 'https://apify.com/dainty_screw',
-      repo: ''
-    },
-    {
-      title: 'DevOps Learning Lab (Interactive)',
-      description: 'Design for a full-stack DevOps self-learning platform with browser shell + quizzes.',
-      tags: ['K8s', 'Terraform', 'Jenkins', 'React'],
-      href: 'https://quicklifesolutions.com',
-      repo: ''
-    },
-    {
-      title: 'Telegram Scraper Toolkit',
-      description: 'Node + Apify toolkit for channel/user scraping with safe automations.',
-      tags: ['Node.js', 'Apify', 'Automation'],
-      href: 'https://quicklifesolutions.com',
-      repo: ''
-    },
-    {
-      title: 'YouTube Transcriber + Summarizer',
-      description: 'Automates transcript retrieval with structured summaries for faster learning.',
-      tags: ['YouTube API', 'Node', 'OpenAI'],
-      href: 'https://quicklifesolutions.com',
+      title: 'Azure Kubernetes (AKS) CI/CD Pipeline',
+      description: 'Built AKS clusters and automated deployments using GitHub Actions and Helm.',
+      tags: ['Azure', 'AKS', 'GitHub Actions', 'Helm', 'CI/CD'],
+      href: '',
       repo: ''
     }
   ],
   links: {
     primary: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/chaitanyamelam/' },
-      { label: 'Website', href: 'https://quicklifesolutions.com' },
-      { label: 'Apify Actors', href: 'https://apify.com/dainty_screw' }
-    ],
-    network: [
+      { label: 'GitHub', href: 'https://github.com/CodemasterDevops421' },
       { label: 'YouTube', href: 'https://www.youtube.com/@CodeMaster-421' },
-      { label: 'Instagram', href: 'https://www.instagram.com/quicklifesolutionsofficial/' },
-      { label: 'AI Newsletter', href: 'https://sendfox.com/quicklifesolutions' },
-      { label: 'Free Consultation', href: 'https://tidycal.com/quicklifesolutions/free-consultation' },
-      { label: 'More Tools (Apify)', href: 'https://apify.com/dainty_screw' },
-      { label: 'Discord (Support)', href: 'https://discord.gg/2WGj2PDmHb' },
-      { label: 'Email', href: 'mailto:codemasterdevops@gmail.com' }
-    ]
+      { label: 'Email', href: 'mailto:melamchaitanyakumar@gmail.com' },
+      { label: 'Phone', href: 'tel:+916305161054' }
+    ],
+    network: []
   }
 }
 
 export default data
+

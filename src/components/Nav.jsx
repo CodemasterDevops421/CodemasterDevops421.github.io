@@ -19,7 +19,7 @@ export default function Nav() {
     <nav className={`fixed top-0 inset-x-0 z-50 transition ${scrolled ? 'bg-black/60 backdrop-blur border-b border-white/10' : 'bg-gradient-to-b from-black/70 to-transparent'}`}>
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
         <a href="#home" className="font-bold tracking-tight">
-          <span className="gradient-text text-xl">Chaitanya</span>
+          <span className="gradient-text text-xl">Melam Chaitanya Kumar</span>
         </a>
         <div className="hidden md:flex items-center gap-6 text-white/80">
           {links.map(l => (

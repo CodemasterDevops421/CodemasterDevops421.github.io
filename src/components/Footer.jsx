@@ -20,7 +20,7 @@ export default function Footer({ links }) {
         </div>
         <div>
           <h4 className="font-semibold">Legal</h4>
-          <p className="text-white/60 text-sm mt-3">© {new Date().getFullYear()} Chaitanya · QuickLifeSolutions. All rights reserved.</p>
+          <p className="text-white/60 text-sm mt-3">© {new Date().getFullYear()} Melam Chaitanya Kumar. All rights reserved.</p>
         </div>
       </div>
     </footer>
