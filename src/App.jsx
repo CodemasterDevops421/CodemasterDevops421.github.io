@@ -29,30 +29,19 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass rounded-2xl p-6 leading-relaxed text-white/90">
               <p className="mb-4">{data.profile.about1}</p>
-              <p className="mb-4">{data.profile.about2}</p>
-              <ul className="grid grid-cols-2 gap-2 text-sm text-white/70 mt-4">
-                {data.skills.core.slice(0, 12).map((s) => (
-                  <li key={s} className="glass rounded-lg px-3 py-2">{s}</li>
-                ))}
-              </ul>
+              <p>{data.profile.about2}</p>
             </div>
-            <div className="grid gap-4">
-              <div className="glass rounded-2xl p-6">
-                <h3 className="text-lg font-semibold mb-2">Tooling</h3>
-                <div className="flex flex-wrap gap-2">
-                  {data.skills.tooling.map((t) => (
-                    <span key={t} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm">{t}</span>
-                  ))}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {Object.entries(data.skills).map(([category, items]) => (
+                <div key={category} className="glass rounded-2xl p-6">
+                  <h3 className="text-lg font-semibold mb-2">{category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((item) => (
+                      <span key={item} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm">{item}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="glass rounded-2xl p-6">
-                <h3 className="text-lg font-semibold mb-2">Cloud & Platforms</h3>
-                <div className="flex flex-wrap gap-2">
-                  {data.skills.cloud.map((t) => (
-                    <span key={t} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm">{t}</span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </Section>
@@ -72,8 +61,8 @@ export default function App() {
         <Section id="contact" title="Contact">
           <div className="glass rounded-2xl p-6 grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2">
-              <h3 className="text-xl font-semibold">Let’s build something reliable, scalable, and fast.</h3>
-              <p className="text-white/70 mt-2">I’m open to senior DevOps, platform engineering, and AI automation projects. Preferred stack: Kubernetes · Terraform · Jenkins/GitHub Actions · AWS/Azure · Python/TypeScript.</p>
+              <h3 className="text-xl font-semibold">Open to DevOps and cloud security opportunities.</h3>
+              <p className="text-white/70 mt-2">With 10 years of experience in AWS, Azure, Kubernetes (EKS/AKS), Terraform, CI/CD, Linux, PostgreSQL, Kafka, and Hazelcast, I can help build secure and scalable platforms.</p>
             </div>
             <div className="flex md:justify-end gap-3">
               {data.links.primary.map((l) => (
