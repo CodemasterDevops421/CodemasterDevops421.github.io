@@ -47,7 +47,7 @@ function Particles({ count = 1200 }) {
 export default function Hero3D({ headline, subline, ctaLabel, ctaHref }) {
   return (
     <div className="relative h-full">
-      <Canvas camera={{ position: [0, 0, 6], fov: 50 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 4.5], fov: 40 }} dpr={[1, 2]}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[6, 6, 6]} intensity={1.2} />
         <TwistedKnot />
@@ -57,7 +57,7 @@ export default function Hero3D({ headline, subline, ctaLabel, ctaHref }) {
           {/* default bloom from drei's Effects (postprocessing) */}
         </Effects>
         <OrbitControls enablePan={false} enableZoom={false} />
-        <Html center distanceFactor={8} transform>
+        <Html center distanceFactor={6} transform>
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
               <span className="gradient-text">{headline}</span>
