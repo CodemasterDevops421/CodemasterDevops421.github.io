@@ -47,7 +47,7 @@ function Particles({ count = 1200 }) {
 export default function Hero3D({ headline, subline, ctaLabel, ctaHref }) {
   return (
     <div className="relative h-full">
-      <Canvas camera={{ position: [0, 0, 4.5], fov: 40 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 4.5], fov: 40 }} dpr={[1, 2]} aria-hidden="true">
         <ambientLight intensity={0.5} />
         <directionalLight position={[6, 6, 6]} intensity={1.2} />
         <TwistedKnot />
@@ -58,15 +58,15 @@ export default function Hero3D({ headline, subline, ctaLabel, ctaHref }) {
         </Effects>
         <OrbitControls enablePan={false} enableZoom={false} />
         <Html center distanceFactor={6} transform>
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          <div className="text-center max-w-xl mx-auto">
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-snug">
               <span className="gradient-text">{headline}</span>
             </h1>
-            <p className="text-white/80 mt-3 md:text-lg max-w-2xl">
+            <p className="text-white/90 mt-3 md:text-lg">
               {subline}
             </p>
             <div className="mt-6">
-              <a href={ctaHref} className="px-6 py-3 rounded-2xl bg-brand-500 hover:bg-brand-400 transition shadow-glow">
+              <a href={ctaHref} className="btn-primary" aria-label={ctaLabel}>
                 {ctaLabel}
               </a>
             </div>

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-2xl text-white font-medium bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 transition shadow-glow focus:outline-none focus:ring-2 focus:ring-brand-300;
+  }
+}
+
 :root {
   --ring: rgba(31,159,255,0.5);
 }
@@ -20,7 +26,7 @@ html, body, #root { height: 100%; }
 
 /***** gradient text *****/
 .gradient-text {
-  background: linear-gradient(90deg, #4bb7ff, #9ae6ff);
+  background: linear-gradient(90deg, #1f9fff, #84d0ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
