@@ -44,7 +44,7 @@ function Particles({ count = 1200 }) {
   )
 }
 
-export default function Hero3D({ headline, subline, ctaLabel, ctaHref }) {
+export default function Hero3D({ headline, subline, primaryCta, secondaryCta }) {
   return (
     <div className="relative h-full">
       <Canvas camera={{ position: [0, 0, 4.5], fov: 40 }} dpr={[1, 2]} aria-hidden="true">
@@ -62,18 +62,29 @@ export default function Hero3D({ headline, subline, ctaLabel, ctaHref }) {
             <h1 className="text-3xl md:text-5xl font-extrabold leading-snug">
               <span className="gradient-text">{headline}</span>
             </h1>
-            <p className="text-white/90 mt-3 md:text-lg">
+            <p className="text-gray-700 dark:text-white/90 mt-3 md:text-lg">
               {subline}
             </p>
-            <div className="mt-6">
-              <a href={ctaHref} className="btn-primary" aria-label={ctaLabel}>
-                {ctaLabel}
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href={primaryCta.href} className="btn-primary" aria-label={primaryCta.label}>
+                {primaryCta.label}
               </a>
+              {secondaryCta && (
+                <a
+                  href={secondaryCta.href}
+                  className="px-6 py-3 rounded-2xl border border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-brand-300"
+                  aria-label={secondaryCta.label}
+                  target={secondaryCta.target}
+                  rel={secondaryCta.target ? 'noreferrer' : undefined}
+                >
+                  {secondaryCta.label}
+                </a>
+              )}
             </div>
           </div>
         </Html>
       </Canvas>
-      <div className="absolute inset-x-0 bottom-6 text-center text-white/70 text-sm">Scroll to explore ↓</div>
+      <div className="absolute inset-x-0 bottom-6 text-center text-gray-600 dark:text-white/70 text-sm">Scroll to explore ↓</div>
     </div>
   )
 }

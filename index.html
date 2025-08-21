@@ -20,8 +20,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-black text-white font-display selection:bg-brand-400/30 selection:text-white">
+  <body class="font-display selection:bg-brand-400/30 selection:text-brand-900 bg-white text-gray-900 dark:bg-black dark:text-white">
     <noscript>
       <div style="background-color:#fff;color:#000;padding:0.5rem;text-align:center;">
         This site requires JavaScript to display content.
