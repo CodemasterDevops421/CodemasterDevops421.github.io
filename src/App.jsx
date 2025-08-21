@@ -21,13 +21,18 @@ export default function App() {
     <div ref={topRef}>
       <Nav />
       <header id="home" className="relative h-[92vh]">
-        <Hero3D headline={`Hi, I'm ${data.profile.name}`} subline={data.profile.tagline} ctaLabel="See Projects" ctaHref="#projects" />
+        <Hero3D
+          headline={`Hi, I'm ${data.profile.name}`}
+          subline={data.profile.tagline}
+          primaryCta={{ label: 'Hire Me', href: '#contact' }}
+          secondaryCta={{ label: 'View Resume', href: '/resume.pdf', target: '_blank' }}
+        />
       </header>
 
       <main className="relative z-10">
         <Section id="about" title="About">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="glass rounded-2xl p-6 leading-relaxed text-white/90">
+            <div className="glass rounded-2xl p-6 leading-relaxed text-gray-700 dark:text-white/90">
               <p className="mb-4">{data.profile.about1}</p>
               <p>{data.profile.about2}</p>
             </div>
@@ -37,7 +42,12 @@ export default function App() {
                   <h3 className="text-lg font-semibold mb-2">{category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {items.map((item) => (
-                      <span key={item} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm">{item}</span>
+                      <span
+                        key={item}
+                        className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-gray-800 dark:text-white/80 text-sm"
+                      >
+                        {item}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -62,7 +72,9 @@ export default function App() {
           <div className="glass rounded-2xl p-6 grid md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2">
               <h3 className="text-xl font-semibold">Open to DevOps and cloud security opportunities.</h3>
-              <p className="text-white/70 mt-2">With 10 years of experience in AWS, Azure, Kubernetes (EKS/AKS), Terraform, CI/CD, Linux, PostgreSQL, Kafka, and Hazelcast, I can help build secure and scalable platforms.</p>
+              <p className="text-gray-700 dark:text-white/70 mt-2">
+                With 10 years of experience in AWS, Azure, Kubernetes (EKS/AKS), Terraform, CI/CD, Linux, PostgreSQL, Kafka, and Hazelcast, I can help build secure and scalable platforms.
+              </p>
             </div>
             <div className="flex md:justify-end gap-3">
               {data.links.primary.map((l) => (
