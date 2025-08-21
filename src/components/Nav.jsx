@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 
+/**
+ * Responsive navigation bar with theme toggle and hash links.
+ */
 const links = [
   { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' }
 ]
@@ -28,8 +31,8 @@ export default function Nav() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition ${
         scrolled
-          ? 'bg-white/70 dark:bg-black/60 backdrop-blur border-b border-black/10 dark:border-white/10'
-          : 'bg-gradient-to-b from-white/80 dark:from-black/70 to-transparent'
+          ? 'bg-white/70 dark:bg-navy/60 backdrop-blur border-b border-black/10 dark:border-white/10'
+          : 'bg-gradient-to-b from-white/80 dark:from-navy/70 to-transparent'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
