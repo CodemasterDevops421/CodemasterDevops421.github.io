@@ -1,0 +1,27 @@
+/* Custom styles for Melam Chaitanya Kumar's portfolio.
+   Designed with accessibility and subtle depth (glassmorphism) in mind.
+*/
+
+/* Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Reusable card style for project items */
+.card {
+  backdrop-filter: blur(6px); /* glassmorphism effect */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+.dark .card {
+  background: rgba(0, 0, 0, 0.3);
+}
