@@ -14,3 +14,5 @@ If you see `SyntaxError: /: Unexpected token (1:0)`, you probably ran Node direc
 - Default branch: `main`
 - Settings → Pages → Source: GitHub Actions
 - Push to `main`; workflow publishes `/dist` automatically
+
+- Build output in `dist/` is ignored to prevent merge conflicts; only commit source files.
