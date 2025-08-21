@@ -51,52 +51,6 @@ const data = {
       'AWS CloudWatch'
     ]
   },
-  experience: [
-    {
-      year: '2021',
-      role: 'DevOps Specialist',
-      company: 'PMAM IT Service Private Limited',
-      period: 'Jan 2021 – Present',
-      summary: 'Designed and deployed Kubernetes clusters and automated cloud infrastructure across AWS and Azure.',
-      highlights: [
-        'Designed and deployed Kubernetes clusters on AWS EKS and Azure AKS for microservices.',
-        'Automated EC2 instance provisioning and security hardening using Terraform and Ansible.',
-        'Configured and optimized PostgreSQL (AWS RDS, Azure SQL) for high availability.',
-        'Integrated Kafka for real-time streaming and Hazelcast caching for high-performance applications.',
-        'Managed Azure Blob Storage and AWS S3 for scalable object storage.',
-        'Developed CI/CD pipelines using Jenkins and Azure DevOps to automate deployments.',
-        'Implemented role-based access controls (RBAC) and IAM policies for secure cloud operations.'
-      ]
-    },
-    {
-      year: '2015',
-      role: 'DevOps Engineer',
-      company: "Kohl's Department Stores (Reva Consulting Inc)",
-      period: 'Sept 2015 – May 2020',
-      summary: 'Managed AWS infrastructure and automated deployments with Terraform and Jenkins.',
-      highlights: [
-        'Deployed AWS EKS and EC2-based applications with Terraform.',
-        'Automated Terraform-based deployments with Jenkins pipelines.',
-        'Managed Git, Jenkins, and Kubernetes for automated build and deployment.',
-        'Integrated Kafka-based data pipelines for log aggregation and streaming.',
-        'Configured Nexus Artifactory for storing artifacts and dependencies.',
-        'Developed Ansible playbooks for infrastructure provisioning.'
-      ]
-    },
-    {
-      year: '2014',
-      role: 'Middleware Engineer',
-      company: 'Reva Consulting Inc',
-      period: 'Feb 2014 – Sept 2015',
-      summary: 'Supported Linux-based WebLogic middleware with automation and security enhancements.',
-      highlights: [
-        'Managed Linux-based WebLogic servers for middleware applications.',
-        'Created Jenkins master-slave configurations for optimized builds.',
-        'Implemented SSL security and high availability for WebLogic.',
-        'Developed Bash and Python scripts for automation.'
-      ]
-    }
-  ],
   projects: [
     {
       title: 'AWS EKS & VPC Setup',
