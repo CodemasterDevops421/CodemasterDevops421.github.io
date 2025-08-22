@@ -1,13 +1,13 @@
 :root {
-  --bg: #0a192f;
-  --text: #ffffff;
+  --bg: #ffffff;
+  --text: #1f2937;
   --accent: #06b6d4;
   --accent-secondary: #7c3aed;
 }
 
 html.dark {
-  --bg: #ffffff;
-  --text: #1f2937;
+  --bg: #0a192f;
+  --text: #ffffff;
 }
 
 body {
