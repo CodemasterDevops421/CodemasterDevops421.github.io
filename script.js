@@ -7,9 +7,11 @@ function setTheme(theme) {
   if (theme === 'dark') {
     root.classList.add('dark');
     icon.innerHTML = '<path d="M12 3.1A9 9 0 1120.9 12 7 7 0 0012 3.1z" />';
+    if (toggle) toggle.setAttribute('aria-pressed', 'true');
   } else {
     root.classList.remove('dark');
     icon.innerHTML = '<path d="M12 4.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" />';
+    if (toggle) toggle.setAttribute('aria-pressed', 'false');
   }
   localStorage.setItem('theme', theme);
 }

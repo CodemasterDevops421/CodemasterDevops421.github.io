@@ -47,9 +47,11 @@
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
-<body class="font-sans antialiased bg-navy text-white dark:bg-white dark:text-gray-900">
-  <!-- Accessible navigation with dark mode toggle -->
-  <header class="fixed w-full bg-navy/80 dark:bg-white/80 backdrop-blur-sm z-50">
+<body class="font-sans antialiased bg-navy text-white dark:bg-white dark:text-gray-900 transition-colors">
+  <!-- Skip link improves keyboard navigation -->
+  <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-cyan focus:text-black">Skip to content</a>
+  <!-- Accessible navigation with dark mode toggle. Removed blur and transparency for a flat 2D header -->
+  <header class="fixed w-full bg-navy dark:bg-white border-b border-cyan/20 dark:border-gray-200 z-50">
     <nav class="container mx-auto flex items-center justify-between p-4" aria-label="Main navigation">
       <a href="#home" class="text-lg font-bold text-cyan">MCK</a>
       <div class="flex items-center gap-6">
@@ -74,9 +76,10 @@
         <h1 class="text-4xl sm:text-5xl font-bold">Hi, I'm <span class="text-cyan">Melam Chaitanya Kumar</span></h1>
         <p class="max-w-2xl mx-auto text-lg text-gray-300 dark:text-gray-700">Senior DevOps & Cloud Security Engineer with 10+ years of experience in building scalable infrastructure and secure CI/CD pipelines across AWS and Azure.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" class="px-6 py-3 rounded bg-cyan text-black font-semibold shadow hover:bg-cyan/80 focus:ring-2 focus:ring-cyan">Hire Me</a>
-          <a href="/resume.pdf" class="px-6 py-3 rounded bg-violet text-white font-semibold shadow hover:bg-violet/80 focus:ring-2 focus:ring-violet">Resume</a>
-          <a href="#projects" class="px-6 py-3 rounded border border-cyan text-cyan font-semibold hover:bg-cyan hover:text-black focus:ring-2 focus:ring-cyan">Projects</a>
+          <!-- Buttons are flat with color transitions, removing drop shadows for a cleaner 2D look -->
+          <a href="#contact" class="px-6 py-3 rounded bg-cyan text-black font-semibold hover:bg-cyan/80 focus:ring-2 focus:ring-cyan transition-colors">Hire Me</a>
+          <a href="/resume.pdf" class="px-6 py-3 rounded bg-violet text-white font-semibold hover:bg-violet/80 focus:ring-2 focus:ring-violet transition-colors">Resume</a>
+          <a href="#projects" class="px-6 py-3 rounded border border-cyan text-cyan font-semibold hover:bg-cyan hover:text-black focus:ring-2 focus:ring-cyan transition-colors">Projects</a>
         </div>
       </div>
     </section>
@@ -94,14 +97,15 @@
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-6">Skills</h2>
         <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">AWS</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">Azure</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">Kubernetes</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">Terraform</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">Docker</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">GitHub Actions</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">Linux</li>
-          <li class="p-4 rounded shadow-sm bg-white/5 dark:bg-white">Python</li>
+          <!-- Flat skill badges with subtle borders for separation -->
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">AWS</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">Azure</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">Kubernetes</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">Terraform</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">Docker</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">GitHub Actions</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">Linux</li>
+          <li class="p-4 rounded border border-white/10 bg-white/5 dark:bg-white dark:border-gray-300 transition-colors">Python</li>
         </ul>
       </div>
     </section>
@@ -140,7 +144,7 @@
             <span class="block mb-1">Message</span>
             <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-white/10 dark:bg-white border border-gray-300 dark:border-gray-400"></textarea>
           </label>
-          <button type="submit" class="px-6 py-3 rounded bg-cyan text-black font-semibold shadow hover:bg-cyan/80 focus:ring-2 focus:ring-cyan">Send</button>
+          <button type="submit" class="px-6 py-3 rounded bg-cyan text-black font-semibold hover:bg-cyan/80 focus:ring-2 focus:ring-cyan transition-colors">Send</button>
         </form>
       </div>
     </section>
