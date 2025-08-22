@@ -6,7 +6,7 @@ export default function Hero() {
       <h1 className="hero-title">
         Hi, I'm <span className="accent">Melam Chaitanya Kumar</span>
       </h1>
-      <p className="hero-sub">DevOps & Cloud Security Engineer</p>
+      <p className="hero-sub">Senior DevOps and Cloud Security Engineer</p>
       <div className="hero-actions">
         <a href="#contact" className="btn primary">Hire Me</a>
         <a href="/resume.pdf" className="btn secondary">Resume</a>
