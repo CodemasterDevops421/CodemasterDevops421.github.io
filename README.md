@@ -1,15 +1,22 @@
 # Melam Chaitanya Kumar — Portfolio
 
-Static portfolio website built with **HTML5**, **Tailwind CSS**, and a pinch of vanilla **JavaScript**.
-The refreshed design is responsive, accessible, and includes a dark/light mode toggle.
+Personal portfolio built with **React**, **Vite**, and custom **CSS**. The design features a dark theme with cyan and violet accent colors and a responsive component-based layout.
 
 ## Development
-No build tools are required. Edit the HTML/CSS/JS files directly and open `index.html` in a browser or host the repository via GitHub Pages.
+
+```bash
+npm install
+npm run dev
+```
 
 ## Structure
-- `index.html` – main site markup and Tailwind configuration.
-- `styles.css` – custom styles (flat cards, reduced-motion support).
-- `script.js` – dark mode, footer year update.
+- `index.html` – entry file mounting the React app.
+- `src/` – React components and global styles.
+- `vite.config.js` – Vite configuration.
 
 ## Deployment
-Push changes to the `main` branch and enable GitHub Pages in repository settings.
+
+```bash
+npm run build
+```
+Deploy the contents of `dist/` to GitHub Pages or Vercel.
