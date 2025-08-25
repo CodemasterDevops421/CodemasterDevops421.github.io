@@ -1,8 +1,9 @@
 {
   "basics": {
-    "name": "Chaitanya Melam",
-    "label": "Senior DevOps / Platform Engineer",
-    "email": "TODO:add-email",
+    "name": "Melam Chaitanya Kumar",
+    "label": "Senior DevOps & Cloud Security Engineer",
+    "email": "melamchaitanyakumar@gmail.com",
+    "phone": "+916305161054",
     "location": {
       "city": "",
       "country": "India",
@@ -16,76 +17,140 @@
       },
       {
         "network": "LinkedIn",
-        "username": "TODO",
-        "url": "TODO"
+        "username": "chaitanyamelam",
+        "url": "https://linkedin.com/in/chaitanyamelam"
+      },
+      {
+        "network": "YouTube",
+        "username": "CodeMaster-421",
+        "url": "https://youtube.com/@CodeMaster-421"
       }
     ],
-    "summary": "Senior DevOps engineer automating cloud infrastructure and CI/CD for scalable platforms."
+    "summary": "Senior DevOps and Cloud Security Engineer with 10 years of experience in cloud infrastructure, automation, and security."
   },
   "work": [
     {
-      "name": "TODO:Company",
-      "position": "Senior DevOps Engineer",
-      "startDate": "TODO",
+      "name": "PMAM IT Service Private Limited",
+      "position": "DevOps Specialist",
+      "startDate": "2021-01-01",
       "endDate": "Present",
-      "summary": "TODO",
+      "summary": "Designed and automated cloud-native infrastructure across AWS and Azure.",
       "highlights": [
-        "Reduced deployment time by 40% using Jenkins pipelines and GitHub Actions",
-        "Managed Kubernetes clusters across AWS, Azure, and GCP"
+        "Deployed Kubernetes clusters on AWS EKS and Azure AKS for microservices",
+        "Automated EC2 instance provisioning and security hardening using Terraform and Ansible",
+        "Configured and optimized PostgreSQL (AWS RDS, Azure SQL) for high availability",
+        "Integrated Kafka streaming and Hazelcast caching for high performance",
+        "Managed Azure Blob Storage and AWS S3 for scalable object storage",
+        "Developed CI/CD pipelines with Jenkins and Azure DevOps",
+        "Implemented RBAC and IAM policies for secure cloud operations"
+      ]
+    },
+    {
+      "name": "Kohl's Department Stores (Reva Consulting Inc)",
+      "position": "DevOps Engineer",
+      "startDate": "2015-09-01",
+      "endDate": "2020-05-01",
+      "summary": "Delivered infrastructure automation and CI/CD for retail platforms.",
+      "highlights": [
+        "Deployed AWS EKS and EC2-based applications with Terraform",
+        "Automated Terraform deployments using Jenkins pipelines",
+        "Managed Git, Jenkins, and Kubernetes for automated builds and deployments",
+        "Integrated Kafka-based data pipelines for log aggregation and streaming",
+        "Configured Nexus Artifactory for storing artifacts and dependencies",
+        "Developed Ansible playbooks for infrastructure provisioning"
+      ]
+    },
+    {
+      "name": "Reva Consulting Inc",
+      "position": "Middleware Engineer",
+      "startDate": "2014-02-01",
+      "endDate": "2015-09-01",
+      "summary": "Managed WebLogic middleware and automation scripts.",
+      "highlights": [
+        "Managed Linux-based WebLogic servers for middleware applications",
+        "Created Jenkins master-slave configurations for optimized builds",
+        "Implemented SSL security and high availability for WebLogic",
+        "Developed Bash and Python scripts for automation"
       ]
     }
   ],
   "projects": [
     {
-      "name": "CloudWatch Copilot",
-      "description": "SaaS platform for visualizing AWS metrics",
-      "url": "TODO",
-      "highlights": ["Built with serverless AWS stack", "Onboarded 50+ users within first month"]
+      "name": "AWS EKS & VPC Setup",
+      "description": "Built AWS EKS clusters with Terraform, configuring networking, IAM roles, and Auto Scaling",
+      "url": "",
+      "highlights": []
     },
     {
-      "name": "Apify Actors",
-      "description": "Scrapers and automation using Apify platform",
-      "url": "TODO",
-      "highlights": ["Automated data collection for 10+ clients"]
+      "name": "AWS EC2 & Storage Optimization",
+      "description": "Automated EC2 provisioning with security groups and S3 lifecycle policies",
+      "url": "",
+      "highlights": []
     },
     {
-      "name": "QuickLifeSolutions Automations",
-      "description": "Workflow automation scripts",
-      "url": "TODO",
-      "highlights": ["Cut manual tasks by 60%"]
+      "name": "Kafka Streaming with AWS MSK",
+      "description": "Deployed Kafka clusters on AWS MSK for log processing and real-time analytics",
+      "url": "",
+      "highlights": []
+    },
+    {
+      "name": "Azure Kubernetes (AKS) CI/CD Pipeline",
+      "description": "Built AKS clusters and automated deployments using GitHub Actions and Helm",
+      "url": "",
+      "highlights": []
     }
   ],
   "education": [
     {
-      "institution": "TODO",
-      "studyType": "TODO",
-      "startDate": "TODO",
-      "endDate": "TODO"
+      "institution": "Northwestern Polytechnic University",
+      "studyType": "MS Electrical Engineering",
+      "startDate": "",
+      "endDate": "2015"
+    },
+    {
+      "institution": "Jawaharlal Nehru Technological University",
+      "studyType": "BTech Electronics and Communication Engineering",
+      "startDate": "",
+      "endDate": "2013"
     }
   ],
   "skills": [
     {
-      "name": "Cloud",
-      "keywords": ["AWS", "Azure", "GCP"]
+      "name": "Cloud Platforms",
+      "keywords": ["AWS", "Azure"]
     },
     {
-      "name": "Containers",
-      "keywords": ["Kubernetes", "Docker", "Helm"]
+      "name": "Kubernetes",
+      "keywords": ["AWS EKS", "Azure AKS", "Helm", "Kustomize", "ArgoCD"]
     },
     {
-      "name": "IaC & CI/CD",
-      "keywords": ["Terraform", "Ansible", "Jenkins", "GitHub Actions"]
+      "name": "Infrastructure Automation",
+      "keywords": ["Terraform", "Ansible", "CloudFormation"]
     },
     {
-      "name": "Languages",
-      "keywords": ["Python", "Java", "Bash"]
+      "name": "Databases",
+      "keywords": ["PostgreSQL", "AWS RDS", "Azure SQL", "MongoDB"]
+    },
+    {
+      "name": "Streaming & Caching",
+      "keywords": ["Kafka", "Hazelcast"]
+    },
+    {
+      "name": "Operating Systems",
+      "keywords": ["Linux", "Windows"]
+    },
+    {
+      "name": "DevOps Tools",
+      "keywords": ["Jenkins", "GitHub Actions", "Azure DevOps"]
+    },
+    {
+      "name": "Security",
+      "keywords": ["IAM", "Encryption", "Secrets Management"]
+    },
+    {
+      "name": "Observability",
+      "keywords": ["Prometheus", "AWS CloudWatch"]
     }
   ],
-  "certificates": [
-    {
-      "name": "AWS Solutions Architect – Associate",
-      "date": "2024-01-01",
-      "issuer": "Amazon"
-    }
-  ]
+  "certificates": []
 }
