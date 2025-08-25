@@ -1,20 +1,28 @@
+/* Design tokens */
 :root {
-  --bg: #ffffff;
-  --text: #1f2937;
-  --accent: #06b6d4;
-  --accent-secondary: #7c3aed;
+  --color-bg: #ffffff;
+  --color-text: #1f2937;
+  --color-accent: #06b6d4;
+  --color-accent-alt: #7c3aed;
+  --font-body: system-ui, sans-serif;
+  --space: 1rem;
+}
+
+[data-variant='bold'] {
+  --color-accent: #ef4444;
+  --color-accent-alt: #f59e0b;
 }
 
 html.dark {
-  --bg: #0a192f;
-  --text: #ffffff;
+  --color-bg: #0a192f;
+  --color-text: #ffffff;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
   transition: background 0.3s, color 0.3s;
 }
 
@@ -22,7 +30,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--bg);
+  background: var(--color-bg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 10;
 }
@@ -37,7 +45,7 @@ body {
   justify-content: space-between;
 }
 .logo {
-  color: var(--accent);
+  color: var(--color-accent);
   font-weight: 700;
   text-decoration: none;
 }
@@ -45,7 +53,7 @@ body {
   background: none;
   border: none;
   font-size: 1.25rem;
-  color: var(--accent);
+  color: var(--color-accent);
   cursor: pointer;
 }
 
@@ -64,7 +72,7 @@ body {
   font-weight: 700;
 }
 .accent {
-  color: var(--accent);
+  color: var(--color-accent);
 }
 .hero-sub {
   color: #94a3b8;
@@ -83,25 +91,25 @@ body {
   transition: background 0.2s, color 0.2s;
 }
 .primary {
-  background: var(--accent);
+  background: var(--color-accent);
   color: #000;
 }
 .primary:hover {
   background: #0891b2;
 }
 .secondary {
-  background: var(--accent-secondary);
+  background: var(--color-accent-alt);
   color: #fff;
 }
 .secondary:hover {
   background: #6d28d9;
 }
 .outline {
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
 }
 .outline:hover {
-  background: var(--accent);
+  background: var(--color-accent);
   color: #000;
 }
 
@@ -121,13 +129,13 @@ body {
   border-radius: 0.5rem;
 }
 .link {
-  color: var(--accent);
+  color: var(--color-accent);
   text-decoration: underline;
 }
 .footer {
   text-align: center;
   padding: 2rem 0;
-  background: var(--bg);
+  background: var(--color-bg);
 }
 
 html.dark .hero-sub {

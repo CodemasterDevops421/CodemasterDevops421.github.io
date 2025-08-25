@@ -1,0 +1,91 @@
+{
+  "basics": {
+    "name": "Chaitanya Melam",
+    "label": "Senior DevOps / Platform Engineer",
+    "email": "TODO:add-email",
+    "location": {
+      "city": "",
+      "country": "India",
+      "timezone": "Asia/Kolkata"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "CodemasterDevops421",
+        "url": "https://github.com/CodemasterDevops421"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "TODO",
+        "url": "TODO"
+      }
+    ],
+    "summary": "Senior DevOps engineer automating cloud infrastructure and CI/CD for scalable platforms."
+  },
+  "work": [
+    {
+      "name": "TODO:Company",
+      "position": "Senior DevOps Engineer",
+      "startDate": "TODO",
+      "endDate": "Present",
+      "summary": "TODO",
+      "highlights": [
+        "Reduced deployment time by 40% using Jenkins pipelines and GitHub Actions",
+        "Managed Kubernetes clusters across AWS, Azure, and GCP"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CloudWatch Copilot",
+      "description": "SaaS platform for visualizing AWS metrics",
+      "url": "TODO",
+      "highlights": ["Built with serverless AWS stack", "Onboarded 50+ users within first month"]
+    },
+    {
+      "name": "Apify Actors",
+      "description": "Scrapers and automation using Apify platform",
+      "url": "TODO",
+      "highlights": ["Automated data collection for 10+ clients"]
+    },
+    {
+      "name": "QuickLifeSolutions Automations",
+      "description": "Workflow automation scripts",
+      "url": "TODO",
+      "highlights": ["Cut manual tasks by 60%"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "TODO",
+      "studyType": "TODO",
+      "startDate": "TODO",
+      "endDate": "TODO"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Cloud",
+      "keywords": ["AWS", "Azure", "GCP"]
+    },
+    {
+      "name": "Containers",
+      "keywords": ["Kubernetes", "Docker", "Helm"]
+    },
+    {
+      "name": "IaC & CI/CD",
+      "keywords": ["Terraform", "Ansible", "Jenkins", "GitHub Actions"]
+    },
+    {
+      "name": "Languages",
+      "keywords": ["Python", "Java", "Bash"]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Solutions Architect – Associate",
+      "date": "2024-01-01",
+      "issuer": "Amazon"
+    }
+  ]
+}

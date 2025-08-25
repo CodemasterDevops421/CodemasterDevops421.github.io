@@ -1,0 +1,14 @@
+{
+  "theme": "auto",
+  "variant": "minimal",
+  "analytics": null,
+  "social": {
+    "github": "https://github.com/CodemasterDevops421",
+    "linkedin": "TODO",
+    "email": "TODO:add-email"
+  },
+  "hero": {
+    "tagline": "Automating cloud platforms with code, reliability, and scale.",
+    "cta": "Hire Me"
+  }
+}
