@@ -7,7 +7,7 @@ export default function Hero() {
   const tagline = config.hero?.tagline || resume.basics.label
   const cta = config.hero?.cta || 'Hire Me'
   return (
-    <section className="hero">
+    <section className="hero reveal">
       <h1 className="hero-title">
         Hi, I'm <span className="accent">{name}</span>
       </h1>

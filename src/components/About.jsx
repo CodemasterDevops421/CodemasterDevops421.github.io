@@ -4,10 +4,10 @@ import resume from '../data/resume.json'
 export default function About() {
   const { summary } = resume.basics
   const skills = resume.skills || []
-  return (
-    <section id="about" className="section">
-      <h2>About</h2>
-      <p>{summary}</p>
+    return (
+      <section id="about" className="section reveal">
+        <h2>About</h2>
+        <p>{summary}</p>
       {skills.length > 0 && (
         <ul>
           {skills.map(skill => (
