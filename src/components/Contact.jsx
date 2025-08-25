@@ -6,10 +6,10 @@ export default function Contact() {
   const email = config.social?.email || resume.basics.email
   const github = config.social?.github
   const linkedin = config.social?.linkedin
-  return (
-    <section id="contact" className="section">
-      <h2>Contact</h2>
-      <p>
+    return (
+      <section id="contact" className="section reveal">
+        <h2>Contact</h2>
+        <p>
         {email && (
           <>
             <a href={`mailto:${email}`}>{email}</a>
