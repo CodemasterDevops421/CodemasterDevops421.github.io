@@ -1,15 +1,22 @@
 import React from 'react'
+import resume from '../data/resume.json'
 
 export default function About() {
+  const { summary } = resume.basics
+  const skills = resume.skills || []
   return (
     <section id="about" className="section">
       <h2>About</h2>
-      <p>
-        Senior DevOps and Cloud Security Engineer with 10 years of experience in cloud infrastructure, automation,
-        and security. Specialized in AWS, Azure, Kubernetes (EKS/AKS), Terraform, and CI/CD pipelines. Extensive
-        experience in Linux system administration, database management (PostgreSQL, AWS RDS, Azure SQL), Kafka
-        streaming, and Hazelcast caching.
-      </p>
+      <p>{summary}</p>
+      {skills.length > 0 && (
+        <ul>
+          {skills.map(skill => (
+            <li key={skill.name}>
+              <strong>{skill.name}:</strong> {skill.keywords.join(', ')}
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   )
 }
