@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://codemasterdevops421.github.io/sitemap.xml

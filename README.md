@@ -1,46 +1,56 @@
-# Chaitanya Melam — Resume Site
+# Chaitanya Portfolio
 
-Recruiter-friendly personal website powered by [Vite](https://vitejs.dev/) and React. Content lives in JSON so updates are quick and build-free.
+Production-ready portfolio built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
 
-## Quick Start
+## Features
+- Sections for hero, about, experience, projects, skills, and contact with validated data.
+- Dark/light theme toggle with persistent preferences.
+- Hardened Next.js configuration with CSP headers and health check endpoint.
+- Jest coverage, CI pipeline, Docker image, and Make targets for reproducible ops.
 
+## Prerequisites
+- Node.js 20+
+- npm 10+
+
+## Setup
 ```bash
+cp .env.example .env.local
 npm install
 npm run dev
 ```
 
-## Personalize in 5 minutes
-
-- Edit `src/data/resume.json` with accurate contact, work history, and project metrics.
-- Tweak theme, design variant, and social links in `src/data/config.json`.
-- Replace SVGs in `public/` with your branding.
-- Run `npm run build` and push to `gh-pages` or use the provided workflow.
-
-## Repository Structure
-
-```
-.
-├── public/            # Logo & favicon
-├── robots.txt
-├── sitemap.xml
-├── src/
-│   ├── components/    # React components
-│   ├── data/          # resume.json and config.json
-│   └── index.css
-└── index.html
+## Production build
+```bash
+npm run build
+npm run start
 ```
 
-## TODO
+## Testing & linting
+```bash
+npm run lint        # type-checks with tsc
+npm run test
+```
 
-- [ ] Add real email, LinkedIn URL, and employer details.
-- [ ] Supply project URLs and impact metrics.
-- [ ] Replace placeholder images with branded assets.
+## Docker
+```bash
+docker compose up --build
+```
 
-## Self‑Critique Checklist
+## Make targets
+```bash
+make install   # install deps + lint + test + build
+make dev       # start dev server
+make test      # run unit tests
+make lint      # run type-checks
+make docker-build
+make docker-run
+```
 
-- [ ] Recruiter 30‑second scan test passed
-- [ ] ≥ 3 quantifiable achievements above the fold
-- [ ] Lighthouse scores ≥ 95 (PWA, Performance, SEO, Best‑Practices, Accessibility)
-- [ ] Mobile thumb‑reach and keyboard navigation verified
+## CI/CD
+GitHub Actions workflow (`.github/workflows/ci.yml`) executes install, type-check, test, and build on push & PR.
 
-MIT Licensed.
+## Security & Ops
+- Security headers via `next.config.mjs`.
+- Structured logging with Pino (`lib/logger.ts`).
+- `/api/health` endpoint for uptime checks.
+- Environment-driven configuration via `.env.local`.
