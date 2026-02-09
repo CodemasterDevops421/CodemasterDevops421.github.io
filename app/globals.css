@@ -53,6 +53,11 @@
 
 body {
   @apply bg-background text-foreground antialiased min-h-screen font-sans;
+  background-image: radial-gradient(circle at top, hsl(var(--primary) / 0.12), transparent 45%);
+}
+
+main {
+  @apply relative;
 }
 
 ::selection {
