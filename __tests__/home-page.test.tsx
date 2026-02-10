@@ -4,7 +4,11 @@ import HomePage from "@/app/page";
 
 describe("HomePage", () => {
   it("renders resume-aligned sections", () => {
+    const errorSpy = jest.spyOn(console, "error").mockImplementation(() => undefined);
+
     const html = renderToString(<HomePage />);
+
+    errorSpy.mockRestore();
 
     expect(html).toContain("Melam Chaitanya Kumar builds secure, observable delivery platforms");
     expect(html).toContain("Production DevOps leadership");

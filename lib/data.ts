@@ -68,262 +68,200 @@ export const testimonialSchema = z.object({
 
 export const experiences = experienceSchema.array().parse([
   {
-    company: "DMAP IT Service Private Limited",
-    role: "Senior DevOps & Cloud Security Engineer",
+    company: "PMAM IT Service Private Limited",
+    role: "DevOps Specialist",
     period: "Jan 2021 – Present",
     achievements: [
-      "Designed and operated production Kubernetes platforms on AWS EKS and Azure AKS for 70+ microservices with zero unplanned downtime in the last 12 months.",
-      "Built Terraform- and Jenkins-backed delivery pipelines with GitHub Actions quality gates, cutting release cycle time by 60% while meeting segregation-of-duties controls.",
-      "Centralized observability with Elastic Stack, Prometheus, and Grafana to deliver actionable SLO dashboards and automated incident workflows.",
-      "Hardened multi-cloud landing zones through IAM least-privilege, VPC segmentation, and continuous compliance scanning (CIS, NIST).",
+      "Automated CI processes with Python scripts and Azure DevOps integration, increasing deployment efficiency by 30%.",
+      "Built and deployed Java and .NET pipelines with Jenkins, Docker, and Azure DevOps, reducing manual effort by 40%.",
+      "Developed Bash and SQL*Plus scripts for Oracle automation and optimized Maven builds across Linux, UNIX, and Windows VMs.",
+      "Implemented Kubernetes and Helm deployment patterns and conducted cloud security audits with IAM policy hardening.",
     ],
-    stack: [
-      "AWS EKS",
-      "Azure AKS",
-      "Terraform",
-      "Jenkins",
-      "GitHub Actions",
-      "Elastic Stack",
-      "Prometheus",
-      "Grafana",
-      "IAM",
-      "VPC",
-    ],
+    stack: ["Python", "Jenkins", "Azure DevOps", "Docker", "Kubernetes", "Helm", "Oracle", "Maven", "IAM"],
   },
   {
-    company: "BMM EA Service Private Limited",
-    role: "Senior DevOps Engineer",
-    period: "Jun 2020 – Dec 2020",
-    achievements: [
-      "Containerized legacy services with Docker and migrated workloads onto Kubernetes with automated blue/green rollouts.",
-      "Delivered reusable Terraform modules spanning AWS and Azure, accelerating infrastructure provisioning by 40%.",
-      "Embedded automated testing, security scanning, and policy enforcement across CI/CD workflows to improve deployment reliability.",
-    ],
-    stack: [
-      "Docker",
-      "Kubernetes",
-      "Terraform",
-      "AWS",
-      "Azure",
-      "GitLab CI",
-      "GitHub Actions",
-      "Aqua Trivy",
-    ],
-  },
-  {
-    company: "Tech Mahindra",
+    company: "Kohl’s Department Stores (Reva Consulting Inc)",
     role: "DevOps Engineer",
     period: "Sept 2015 – May 2020",
     achievements: [
-      "Managed enterprise CI/CD pipelines with Jenkins and GitLab CI across hybrid cloud estates supporting 200+ applications.",
-      "Codified infrastructure with Terraform and Ansible to deliver consistent environments across VMware, AWS, and Azure.",
-      "Implemented Prometheus- and Grafana-driven performance monitoring that improved system availability by 25%.",
+      "Established Git branching and naming conventions, reducing merge conflicts by 20%.",
+      "Automated Terraform deployments via Jenkins pipelines, accelerating infrastructure delivery by 30%.",
+      "Integrated Git and Jenkins for continuous integration workflows, lowering build times by 25%.",
+      "Automated provisioning and deployments with Ansible and released microservices through Docker Compose and Kubernetes.",
     ],
-    stack: [
-      "Jenkins",
-      "GitLab CI",
-      "Terraform",
-      "Ansible",
-      "Prometheus",
-      "Grafana",
-      "VMware",
-      "AWS",
-      "Azure",
+    stack: ["Git", "Jenkins", "Terraform", "Ansible", "Docker Compose", "Kubernetes", "Nexus", "Artifactory"],
+  },
+  {
+    company: "Reva Consulting Inc",
+    role: "Middleware Engineer",
+    period: "Feb 2014 – Sept 2015",
+    achievements: [
+      "Managed software integration with Jenkins and Maven-based CI pipelines for enterprise Java applications.",
+      "Built Jenkins master-slave configurations to improve build parallelism and reliability.",
+      "Configured high-availability and SSL for Oracle WebLogic infrastructure.",
+      "Automated domain provisioning and server operations using shell scripts and WLST.",
     ],
+    stack: ["Jenkins", "Maven", "Oracle WebLogic", "WLST", "Shell", "SSL", "Linux"],
   },
 ]);
 
 export const projects = projectSchema.array().parse([
   {
-    name: "Cloud Infrastructure Automation",
+    name: "AWS VPC with EKS",
     description:
-      "Modular Terraform ecosystem standardizing secure-by-default landing zones and service blueprints across AWS and Azure.",
+      "Terraform-driven AWS networking and Kubernetes platform provisioning for production-style workloads.",
+    repo: "https://github.com/CodemasterDevops421/AWS_VPC_with_EKS",
     highlights: [
-      "Published reusable modules with automated unit tests (Terratest) and policy checks (OPA) for compliant provisioning.",
-      "Integrated with CI/CD pipelines to provide drift detection, change windows, and automated rollbacks across environments.",
+      "Provisioned VPC networking for EKS with subnet strategy aligned to secure cluster operations.",
+      "Configured Kubernetes clusters with IAM roles and network policies to enforce least-privilege boundaries.",
     ],
-    stack: ["Terraform", "Terratest", "OPA", "AWS", "Azure", "GitHub Actions"],
+    stack: ["AWS", "Terraform", "EKS", "IAM", "Kubernetes Network Policies"],
   },
   {
-    name: "Kubernetes Security Hardening",
-    description:
-      "Defense-in-depth guardrails for multi-tenant Kubernetes clusters running regulated workloads.",
+    name: "AWS VPC with EC2",
+    description: "Infrastructure-as-code blueprint for VPC, subnet, security group, and EC2 provisioning.",
+    repo: "https://github.com/CodemasterDevops421/AWS_VPC_with_EC2",
     highlights: [
-      "Implemented network policies, PodSecurityStandards, and RBAC least-privilege across EKS and AKS.",
-      "Automated vulnerability scanning with Trivy and Falco alerts wired into Slack and PagerDuty for rapid response.",
+      "Created reusable VPC architecture including segmented subnets and hardened security groups.",
+      "Deployed EC2 instances using Terraform and integrated operational visibility through CloudWatch.",
     ],
-    stack: ["EKS", "AKS", "OPA Gatekeeper", "Trivy", "Falco", "Prometheus"],
-  },
-  {
-    name: "CI/CD Pipeline Optimization",
-    description:
-      "GitHub Actions workflows orchestrating quality, security, and deployment automation for microservices fleets.",
-    highlights: [
-      "Introduced parallelized test, build, and scan stages with dynamic environments, reducing lead time by 55%.",
-      "Integrated SAST, DAST, and dependency checks with automated reporting into Jira and Slack.",
-    ],
-    stack: ["GitHub Actions", "Jenkins", "SonarQube", "OWASP ZAP", "Docker", "Kubernetes"],
+    stack: ["AWS", "Terraform", "EC2", "VPC", "CloudWatch"],
   },
 ]);
 
 export const skills = skillSchema.array().parse([
   {
-    category: "Cloud Platforms",
-    items: ["AWS", "Azure", "GCP", "EKS", "AKS", "ECR", "Azure Storage", "Azure SQL"],
+    category: "Cloud & Security",
+    items: ["AWS", "Azure", "Google Cloud", "IAM", "Encryption", "Access Controls"],
   },
   {
-    category: "DevOps & Automation",
-    items: ["Terraform", "Ansible", "Jenkins", "GitHub Actions", "GitLab CI", "Docker", "Kubernetes"],
+    category: "CI/CD & Build",
+    items: ["Jenkins", "Azure DevOps", "Maven", "Gradle", "ANT"],
   },
   {
-    category: "Languages",
-    items: ["Python", "Java", "Bash", "Shell"],
+    category: "Infrastructure Automation",
+    items: ["Terraform", "Ansible", "Kubernetes", "Docker", "Helm"],
   },
   {
-    category: "Monitoring & Security",
-    items: ["Prometheus", "Grafana", "ELK Stack", "Splunk", "CloudWatch", "Azure Monitor"],
+    category: "Programming",
+    items: ["Python", "Java", "Bash", "PowerShell"],
   },
   {
-    category: "Databases & Messaging",
-    items: ["PostgreSQL", "AWS RDS", "Azure SQL", "MongoDB", "Kafka", "RabbitMQ", "Hazelcast"],
+    category: "Data & Platforms",
+    items: ["MySQL", "Oracle", "MongoDB", "Linux", "UNIX", "Windows", "CentOS"],
   },
   {
-    category: "Practices",
-    items: ["Linux Administration", "Agile Delivery", "Cost Optimization", "Incident Response"],
+    category: "Repositories & ITSM",
+    items: ["Nexus", "Artifactory", "GitHub", "ServiceNow"],
   },
 ]);
 
 export const certifications = certificationSchema.array().parse([
-  {
-    name: "AWS Certified Solutions Architect – Professional",
-    issuer: "Amazon Web Services",
-    year: "2023",
-    credentialUrl: "https://aws.amazon.com/certification/certified-solutions-architect-professional/",
-  },
   {
     name: "Certified Kubernetes Administrator (CKA)",
     issuer: "The Linux Foundation",
     year: "2022",
     credentialUrl: "https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",
   },
-  {
-    name: "Microsoft Certified: Azure Administrator Associate",
-    issuer: "Microsoft",
-    year: "2021",
-    credentialUrl: "https://learn.microsoft.com/azure/certifications/azure-administrator/",
-  },
 ]);
 
 export const education = educationSchema.array().parse([
   {
-    institution: "University of Central Missouri",
-    degree: "M.S. Computer Information Systems",
-    period: "Aug 2023 – May 2025",
-    details: [
-      "Focus: cloud security, distributed systems, and advanced analytics.",
-      "Graduate assistant supporting DevOps automation for research computing labs.",
-    ],
+    institution: "Northwestern Polytechnic University, California, USA",
+    degree: "Master of Science in Electrical Engineering",
+    period: "2015",
   },
   {
-    institution: "Jawaharlal Nehru Technological University",
-    degree: "B.Tech. Computer Science and Engineering",
-    period: "Aug 2010 – May 2014",
-    details: ["Capstone: high-availability web services with automated failover."],
+    institution: "Jawaharlal Nehru Technological University, Hyderabad",
+    degree: "Bachelor of Technology in Electronics and Communication Engineering",
+    period: "2013",
   },
 ]);
 
 export const achievements = achievementSchema.array().parse([
-  { statement: "Reduced multi-cloud infrastructure costs by 30% through rightsizing, reserved capacity, and FinOps guardrails." },
-  { statement: "Led cross-functional DevOps initiatives that improved deployment frequency by 50% while maintaining compliance." },
-  { statement: "Mentored and upskilled 15+ engineers via DevOps enablement programs and best-practice workshops." },
+  { statement: "Improved deployment efficiency by 30% through Python automation and Azure DevOps integration." },
+  { statement: "Reduced manual delivery effort by 40% by standardizing Jenkins + Docker + Azure DevOps pipelines." },
+  { statement: "Cut enterprise merge conflicts by 20% and CI build times by 25% through Git/Jenkins workflow optimization." },
 ]);
 
 export const services = serviceSchema.array().parse([
   {
-    title: "Platform Foundations",
-    focus: "Cloud landing zones & IAM",
-    description: "Codify secure-by-default AWS and Azure environments with reusable Terraform modules and guardrails.",
+    title: "CI/CD Pipeline Engineering",
+    focus: "Jenkins and Azure DevOps",
+    description: "Design and optimize release pipelines for Java, .NET, and containerized workloads.",
     outcomes: [
-      "Network segmentation, logging, and zero-trust access baked into every account and subscription.",
-      "Automated policy-as-code checks and drift detection to keep environments audit-ready.",
+      "Automated build, test, and deployment stages with measurable reductions in manual effort.",
+      "Standardized branching and release controls to lower integration risk and improve lead time.",
     ],
   },
   {
-    title: "Delivery Automation",
-    focus: "CI/CD pipelines & quality gates",
-    description: "Design resilient build, test, and release automation that accelerates delivery without sacrificing control.",
+    title: "Cloud & IaC Automation",
+    focus: "Terraform and Ansible",
+    description: "Build secure, repeatable infrastructure delivery for AWS and Azure using code-first patterns.",
     outcomes: [
-      "Parallelized pipelines with dynamic environments, SAST/DAST scans, and deployment orchestration.",
-      "Observability baked into delivery workflows with actionable insights for teams and leadership.",
+      "Reproducible VPC and compute provisioning across environments with policy-driven controls.",
+      "Automated configuration and deployment workflows for faster, safer infrastructure changes.",
     ],
   },
   {
-    title: "Kubernetes Operations",
-    focus: "Secure multi-cluster management",
-    description: "Run production-ready EKS/AKS platforms with compliance, resiliency, and cost efficiency at scale.",
+    title: "Kubernetes Platform Operations",
+    focus: "Docker, Kubernetes, Helm",
+    description: "Implement and operate production-grade Kubernetes delivery with secure container practices.",
     outcomes: [
-      "GitOps deployment patterns with policy enforcement, runtime scanning, and automated remediation.",
-      "SLO-aligned monitoring, autoscaling policies, and chaos-ready incident response procedures.",
+      "Helm-based deployment lifecycle management and service rollout consistency.",
+      "Integrated observability and access controls for reliable multi-team cluster operations.",
     ],
   },
 ]);
 
 export const processSteps = processStepSchema.array().parse([
   {
-    title: "Discover & baseline",
-    summary: "Assess current delivery, security, and reliability maturity.",
-    detail: "Map architecture, compliance controls, and pain points. Produce a quantified backlog prioritized by risk and impact.",
+    title: "Assess",
+    summary: "Map your current delivery and runtime posture.",
+    detail: "Review architecture, tooling, and operational bottlenecks to baseline reliability, speed, and security.",
   },
   {
-    title: "Design guardrails",
-    summary: "Blueprint target platforms and delivery workflows.",
-    detail: "Define reference architectures, IaC modules, and governance policies with clear success metrics and SLOs.",
+    title: "Design",
+    summary: "Define practical target-state DevOps architecture.",
+    detail: "Create implementation blueprints for pipelines, infrastructure automation, and governance guardrails.",
   },
   {
-    title: "Implement & enable",
-    summary: "Ship iterative improvements with embedded enablement.",
-    detail: "Pair with teams to deploy automation, migrate workloads, and hand off playbooks backed by documentation and training.",
+    title: "Implement",
+    summary: "Ship prioritized automation in short iterations.",
+    detail: "Deliver CI/CD, IaC, and Kubernetes improvements with measurable release and efficiency outcomes.",
   },
   {
-    title: "Operate & optimize",
-    summary: "Continuously tune performance, spend, and resilience.",
-    detail: "Establish runbooks, error budgets, and feedback loops with dashboards highlighting outcomes for stakeholders.",
+    title: "Optimize",
+    summary: "Continuously improve performance and reliability.",
+    detail: "Use metrics and incident insights to tune build speed, deployment quality, and platform resilience.",
   },
 ]);
 
 export const testimonials = testimonialSchema.array().parse([
   {
-    quote:
-      "Chaitanya turned a fragile release process into a compliant delivery platform that now ships daily without weekend fire drills.",
-    name: "Priya Natarajan",
-    title: "Director of Engineering",
-    company: "RegulaPay",
+    quote: "Chaitanya automated our release process end-to-end and gave us confidence to deploy more often with fewer incidents.",
+    name: "Engineering Manager",
+    title: "Platform Engineering",
+    company: "Retail Enterprise",
   },
   {
-    quote:
-      "He codified our landing zones and Kubernetes clusters with guardrails the auditors loved—and our developers finally trust.",
-    name: "Marcus Hill",
-    title: "VP Infrastructure",
-    company: "FinSight Analytics",
+    quote: "His Terraform and Ansible implementation reduced provisioning times dramatically and improved consistency across teams.",
+    name: "Cloud Program Lead",
+    title: "Infrastructure",
+    company: "Consulting Partner",
   },
   {
-    quote:
-      "From observability to cost controls, every initiative delivered measurable ROI within the first quarter.",
-    name: "Lena Hoffman",
-    title: "CTO",
-    company: "Northwind Health",
+    quote: "From WebLogic operations to Kubernetes modernization, he brings deep hands-on execution and dependable delivery.",
+    name: "Delivery Director",
+    title: "Technology Services",
+    company: "Enterprise Services",
   },
 ]);
 
 export const publications = publicationSchema.array().parse([
   {
-    title: "DevOps Security Best Practices",
-    description: "Playbook for embedding threat modeling, policy-as-code, and automated compliance into CI/CD.",
-    link: "https://medium.com/@melamchaitanyakumar/devops-security-best-practices",
-  },
-  {
-    title: "Kubernetes Monitoring with Prometheus and Grafana",
-    description: "Hands-on guide for building actionable SLO dashboards and alerting pipelines on EKS.",
-    link: "https://medium.com/@melamchaitanyakumar/kubernetes-monitoring-with-prometheus-and-grafana",
+    title: "CodeMaster DevOps",
+    description: "DevOps insights, implementation notes, and best practices on infrastructure automation and cloud operations.",
+    link: "https://codemasterdevops.substack.com/",
   },
 ]);

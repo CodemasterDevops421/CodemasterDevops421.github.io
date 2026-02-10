@@ -1,30 +1,35 @@
+import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const highlights = [
-  "Security-first automation with IAM least privilege, policy-as-code, and zero-trust networking.",
-  "Data-driven operations with SLOs, actionable observability, and continuous improvement cadences.",
-  "Enablement mindset—pairing, mentoring, and building reusable accelerators for platform adoption.",
+  "Security-first delivery with IAM controls, encryption standards, and access-governance guardrails.",
+  "Automation-first operations with Jenkins, Azure DevOps, Terraform, Ansible, Docker, and Kubernetes.",
+  "Enterprise release discipline with measurable outcomes in deployment speed, quality, and effort reduction.",
 ];
 
 export function AboutSection() {
   return (
     <section className="container space-y-10 py-24" id="about">
-      <SectionHeading
+      <Reveal>
+        <SectionHeading
         eyebrow="About"
-        title="DevOps leader delivering compliant, resilient platforms"
-        description="Senior engineer with 10+ years designing secure multi-cloud infrastructure, streamlining CI/CD, and operationalizing observability at scale."
+        title="DevOps engineer focused on secure automation and reliable delivery"
+        description="Senior DevOps and Cloud Security Engineer with 9+ years of experience across AWS, Azure, CI/CD, infrastructure automation, and Kubernetes operations."
       />
+      </Reveal>
       <div className="grid gap-8 md:grid-cols-2">
         <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
           <p className="text-foreground">
-            I align platform roadmaps to business outcomes—codifying landing zones with Terraform, scaling Kubernetes workloads on AWS and Azure, and embedding security controls from day zero.
+            I specialize in modernizing enterprise delivery platforms by combining infrastructure-as-code, secure cloud implementation,
+            and pragmatic DevOps operating models.
           </p>
           <p>
-            My playbook blends automation, governance, and coaching. From GitOps pipelines with automated compliance to hands-on incident leadership, I help teams ship faster while staying audit-ready.
+            My execution spans pipeline engineering for Java and .NET workloads, cloud security hardening, and automation initiatives
+            that improve release velocity while reducing manual operational risk.
           </p>
         </div>
         <div className="space-y-4 rounded-3xl border bg-card/70 p-8 shadow-xl">
-          <h3 className="text-lg font-semibold text-foreground">Principles I operate by</h3>
+          <h3 className="text-lg font-semibold text-foreground">Operating principles</h3>
           <ul className="list-inside list-disc space-y-2 text-sm text-muted-foreground">
             {highlights.map((item) => (
               <li key={item}>{item}</li>

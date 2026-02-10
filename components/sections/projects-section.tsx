@@ -3,17 +3,20 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { projects } from "@/lib/data";
 
 export function ProjectsSection() {
   return (
     <section className="container space-y-10 py-24" id="projects">
-      <SectionHeading
+      <Reveal>
+        <SectionHeading
         eyebrow="Projects"
         title="Resume-aligned initiatives"
         description="Representative engagements showcasing infrastructure automation, security hardening, and CI/CD acceleration."
       />
+      </Reveal>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Card key={project.name} className="flex flex-col">

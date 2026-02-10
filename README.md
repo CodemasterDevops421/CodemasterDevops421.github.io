@@ -1,12 +1,12 @@
 # Chaitanya Portfolio
 
-Production-ready portfolio built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
+Production-grade portfolio built with Next.js 14 App Router, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Features
-- Sections for hero, about, experience, projects, skills, and contact with validated data.
-- Dark/light theme toggle with persistent preferences.
-- Hardened Next.js configuration with CSP headers and health check endpoint.
-- Jest coverage, CI pipeline, Docker image, and Make targets for reproducible ops.
+- High-conversion hero and portfolio sections tailored for senior DevOps consulting opportunities.
+- Secure contact workflow using Server Actions + webhook route with shared schema/service validation, honeypot spam control, timing-safe secret verification, and rate limiting.
+- Structured logging (Pino), health endpoint, CSP headers, and environment-driven configuration.
+- Jest coverage (including webhook route behavior tests), CI workflow, Docker image, and Make targets for repeatable delivery.
 
 ## Prerequisites
 - Node.js 20+
@@ -27,7 +27,7 @@ npm run start
 
 ## Testing & linting
 ```bash
-npm run lint        # type-checks with tsc
+npm run lint
 npm run test
 ```
 
@@ -38,19 +38,15 @@ docker compose up --build
 
 ## Make targets
 ```bash
-make install   # install deps + lint + test + build
-make dev       # start dev server
-make test      # run unit tests
-make lint      # run type-checks
+make install
+make dev
+make lint
+make test
 make docker-build
 make docker-run
 ```
 
-## CI/CD
-GitHub Actions workflow (`.github/workflows/ci.yml`) executes install, type-check, test, and build on push & PR.
-
-## Security & Ops
-- Security headers via `next.config.mjs`.
-- Structured logging with Pino (`lib/logger.ts`).
-- `/api/health` endpoint for uptime checks.
-- Environment-driven configuration via `.env.local`.
+## Environment variables
+- `NEXT_PUBLIC_SITE_URL`: base URL used by server actions.
+- `LOG_LEVEL`: logger verbosity (`debug`, `info`, `warn`, `error`).
+- `CONTACT_WEBHOOK_SECRET`: shared secret for `/api/webhooks/contact` route (required in production).

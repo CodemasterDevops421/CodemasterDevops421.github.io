@@ -2,6 +2,7 @@ import { ServerCog, ShieldCheck, Workflow } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { services } from "@/lib/data";
 
@@ -10,11 +11,13 @@ const serviceIcons = [ShieldCheck, Workflow, ServerCog];
 export function ServicesSection() {
   return (
     <section className="container space-y-10 py-24" id="services">
-      <SectionHeading
+      <Reveal>
+        <SectionHeading
         eyebrow="Services"
         title="Engagements engineered for velocity, security, and trust"
         description="Targeted packages that modernize delivery platforms while embedding governance, enablement, and measurable outcomes."
       />
+      </Reveal>
       <div className="grid gap-6 md:grid-cols-3">
         {services.map((service, index) => {
           const Icon = serviceIcons[index % serviceIcons.length];

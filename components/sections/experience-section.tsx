@@ -1,16 +1,19 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { experiences } from "@/lib/data";
 
 export function ExperienceSection() {
   return (
     <section className="container space-y-10 py-24" id="experience">
-      <SectionHeading
+      <Reveal>
+        <SectionHeading
         eyebrow="Work Experience"
         title="Production DevOps leadership"
         description="Driving secure, automated delivery pipelines across global enterprises and regulated industries."
       />
+      </Reveal>
       <div className="grid gap-6 md:grid-cols-2">
         {experiences.map((experience) => (
           <Card key={experience.company} className="flex flex-col">
