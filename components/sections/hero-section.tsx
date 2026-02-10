@@ -4,14 +4,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github, Linkedin, Mail, ShieldCheck, Sparkles, Workflow, Youtube } from "lucide-react";
 
+import { CountUp } from "@/components/motion/count-up";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const metrics = [
-  { label: "platforms modernized", value: "110+", detail: "Cloud migrations, GitOps rollouts, and policy guardrails" },
-  { label: "deployment confidence", value: "99.95%", detail: "Release reliability with observability and auto-remediation" },
-  { label: "delivery acceleration", value: "4.3x", detail: "Lead-time reduction using Terraform, K8s, and CI orchestration" },
-] as const;
+type Metric = {
+  label: string;
+  value: number;
+  detail: string;
+  suffix: string;
+  decimals?: number;
+};
+
+const metrics: Metric[] = [
+  { label: "platforms modernized", value: 110, suffix: "+", detail: "Cloud migrations, GitOps rollouts, and policy guardrails" },
+  { label: "deployment confidence", value: 99.95, suffix: "%", decimals: 2, detail: "Release reliability with observability and auto-remediation" },
+  { label: "delivery acceleration", value: 4.3, suffix: "x", decimals: 1, detail: "Lead-time reduction using Terraform, K8s, and CI orchestration" },
+];
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -84,7 +93,7 @@ export function HeroSection() {
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 220, damping: 20 }}
             >
-              <p className="text-2xl font-black">{metric.value}</p>
+              <CountUp className="text-2xl font-black" value={metric.value} suffix={metric.suffix} decimals={metric.decimals ?? 0} />
               <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-300">{metric.label}</p>
               <p className="mt-2 text-xs text-muted-foreground">{metric.detail}</p>
             </motion.article>
