@@ -68,9 +68,32 @@ export const testimonialSchema = z.object({
 
 export const experiences = experienceSchema.array().parse([
   {
+    company: "Infosys (Verizon Client)",
+    role: "Lead Consultant",
+    period: "Jun 2025 – Jan 2026",
+    achievements: [
+      "Led Apigee Hybrid platform CI/CD setup with gated promotion paths across DEV, UAT, STG, and PROD environments.",
+      "Designed API architecture standards for proxy, product, KVM, and TargetServer lifecycle management with security-first controls.",
+      "Developed and enhanced Java-based Jenkins plugins with robust input validation, credential-safe secret handling, and shell/API orchestration.",
+      "Built Python and automation scripts to operationalize Apigee management workflows, reducing deployment triage time during L3-style support.",
+    ],
+    stack: [
+      "Google Cloud Console",
+      "Apigee Hybrid",
+      "Apigee X",
+      "Jenkins",
+      "Java",
+      "Python",
+      "GitLab",
+      "Postman",
+      "Shell",
+      "OAuth",
+    ],
+  },
+  {
     company: "PMAM IT Service Private Limited",
     role: "DevOps Specialist",
-    period: "Jan 2021 – Present",
+    period: "Jan 2021 – Jun 2025",
     achievements: [
       "Automated CI processes with Python scripts and Azure DevOps integration, increasing deployment efficiency by 30%.",
       "Built and deployed Java and .NET pipelines with Jenkins, Docker, and Azure DevOps, reducing manual effort by 40%.",
@@ -107,6 +130,36 @@ export const experiences = experienceSchema.array().parse([
 
 export const projects = projectSchema.array().parse([
   {
+    name: "Verizon Apigee Hybrid CI/CD & Governance Platform",
+    description:
+      "Enterprise Apigee Hybrid delivery framework with validated multi-environment promotion, API governance, and secure release controls.",
+    highlights: [
+      "Implemented Jenkins-driven deployment orchestration for proxy bundles, API products, KVMs, and TargetServers with approval gates.",
+      "Automated deploy/undeploy and environment validation using Apigee management APIs, improving release consistency across DEV/UAT/STG/PROD.",
+    ],
+    stack: ["Google Cloud Console", "Apigee Hybrid", "Apigee APIs", "Jenkins", "GitLab", "Postman", "OAuth"],
+  },
+  {
+    name: "Custom Jenkins Plugin Development for Apigee Deployments",
+    description:
+      "Java plugin extensions to standardize Apigee deployment requests with secure credential use and strong validation workflows.",
+    highlights: [
+      "Added organization/environment/resource/path sanitization and policy checks before deployment execution.",
+      "Integrated plugin UI, Java validation layer, and shell runners to ensure deterministic and auditable deployment automation.",
+    ],
+    stack: ["Java", "Jenkins Plugin Development", "Shell", "Credentials API", "CI/CD"],
+  },
+  {
+    name: "Infosys Verizon Microservices & Python Automation",
+    description:
+      "Python scripting and microservice support utilities to accelerate troubleshooting and release readiness in API programs.",
+    highlights: [
+      "Built reusable Python scripts for config verification and release diagnostics aligned to runbook-based support workflows.",
+      "Enabled faster root-cause isolation by combining pipeline telemetry, management API state checks, and environment config validation.",
+    ],
+    stack: ["Python", "Microservices", "REST APIs", "Git", "Jenkins", "Observability"],
+  },
+  {
     name: "AWS VPC with EKS",
     description:
       "Terraform-driven AWS networking and Kubernetes platform provisioning for production-style workloads.",
@@ -132,15 +185,15 @@ export const projects = projectSchema.array().parse([
 export const skills = skillSchema.array().parse([
   {
     category: "Cloud & Security",
-    items: ["AWS", "Azure", "Google Cloud", "IAM", "Encryption", "Access Controls"],
+    items: ["AWS", "Azure", "Google Cloud", "Google Cloud Console", "IAM", "Encryption", "Access Controls"],
   },
   {
     category: "CI/CD & Build",
-    items: ["Jenkins", "Azure DevOps", "Maven", "Gradle", "ANT"],
+    items: ["Jenkins", "Jenkins Plugin Development", "Azure DevOps", "GitLab CI/CD", "Maven", "Gradle", "ANT"],
   },
   {
     category: "Infrastructure Automation",
-    items: ["Terraform", "Ansible", "Kubernetes", "Docker", "Helm"],
+    items: ["Terraform", "Ansible", "Kubernetes", "Docker", "Helm", "Apigee Hybrid", "Apigee API Management"],
   },
   {
     category: "Programming",
@@ -152,7 +205,7 @@ export const skills = skillSchema.array().parse([
   },
   {
     category: "Repositories & ITSM",
-    items: ["Nexus", "Artifactory", "GitHub", "ServiceNow"],
+    items: ["Nexus", "Artifactory", "GitHub", "GitLab", "Postman", "ServiceNow"],
   },
 ]);
 
