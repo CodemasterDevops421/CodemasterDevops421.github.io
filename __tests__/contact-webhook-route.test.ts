@@ -62,7 +62,7 @@ describe("contact webhook route", () => {
     expect(body).toEqual({ ok: true, requestId: validPayload.requestId });
   });
 
-  it("rate limits burst requests", async () => {
+  it("rate limits burst authorized requests", async () => {
     for (let attempt = 0; attempt < 10; attempt += 1) {
       const request = new NextRequest("http://localhost:3000/api/webhooks/contact", {
         method: "POST",
@@ -93,5 +93,97 @@ describe("contact webhook route", () => {
     expect(limitedResponse.status).toBe(429);
     expect(limitedResponse.headers.get("Retry-After")).toBe("60");
     expect(body).toEqual({ error: "rate_limited" });
+  });
+
+  it("does not consume the authorized bucket on unauthorized requests", async () => {
+    for (let attempt = 0; attempt < 10; attempt += 1) {
+      const unauthorizedRequest = new NextRequest("http://localhost:3000/api/webhooks/contact", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-webhook-secret": "wrong",
+          "x-forwarded-for": "3.3.3.3",
+        },
+        body: JSON.stringify(validPayload),
+      });
+
+      const unauthorizedResponse = await POST(unauthorizedRequest);
+      expect(unauthorizedResponse.status).toBe(401);
+    }
+
+    const authorizedRequest = new NextRequest("http://localhost:3000/api/webhooks/contact", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-webhook-secret": "test-secret",
+        "x-forwarded-for": "3.3.3.3",
+      },
+      body: JSON.stringify(validPayload),
+    });
+
+    const authorizedResponse = await POST(authorizedRequest);
+    expect(authorizedResponse.status).toBe(202);
+  });
+
+  it("rate limits repeated unauthorized attempts", async () => {
+    for (let attempt = 0; attempt < 30; attempt += 1) {
+      const unauthorizedRequest = new NextRequest("http://localhost:3000/api/webhooks/contact", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-webhook-secret": "wrong",
+          "x-forwarded-for": "4.4.4.4",
+        },
+        body: JSON.stringify(validPayload),
+      });
+
+      const unauthorizedResponse = await POST(unauthorizedRequest);
+      expect(unauthorizedResponse.status).toBe(401);
+    }
+
+    const throttledUnauthorizedRequest = new NextRequest("http://localhost:3000/api/webhooks/contact", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-webhook-secret": "wrong",
+        "x-forwarded-for": "4.4.4.4",
+      },
+      body: JSON.stringify(validPayload),
+    });
+
+    const throttledUnauthorizedResponse = await POST(throttledUnauthorizedRequest);
+    const body = await throttledUnauthorizedResponse.json();
+
+    expect(throttledUnauthorizedResponse.status).toBe(429);
+    expect(throttledUnauthorizedResponse.headers.get("Retry-After")).toBe("60");
+    expect(body).toEqual({ error: "rate_limited" });
+  });
+
+  it("uses unknown-client fallback when all fingerprint headers are missing", async () => {
+    for (let attempt = 0; attempt < 30; attempt += 1) {
+      const unauthorizedRequest = new NextRequest("http://localhost:3000/api/webhooks/contact", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-webhook-secret": "wrong",
+        },
+        body: JSON.stringify(validPayload),
+      });
+
+      const unauthorizedResponse = await POST(unauthorizedRequest);
+      expect(unauthorizedResponse.status).toBe(401);
+    }
+
+    const throttledUnauthorizedRequest = new NextRequest("http://localhost:3000/api/webhooks/contact", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-webhook-secret": "wrong",
+      },
+      body: JSON.stringify(validPayload),
+    });
+
+    const throttledUnauthorizedResponse = await POST(throttledUnauthorizedRequest);
+    expect(throttledUnauthorizedResponse.status).toBe(429);
   });
 });
