@@ -1,17 +1,25 @@
-import { timingSafeEqual } from "crypto";
+import { createHash, timingSafeEqual } from "crypto";
 
 import { NextRequest, NextResponse } from "next/server";
 
 import { webhookContactSchema } from "@/lib/contact";
 import { processContactInquiry } from "@/lib/contact-service";
-import { contactWebhookRateLimiter } from "@/lib/contact-webhook-rate-limiter";
+import { contactWebhookAuthRateLimiter, contactWebhookRateLimiter } from "@/lib/contact-webhook-rate-limiter";
 import { logger } from "@/lib/logger";
 
+function summarizeValidationIssues(issues: { path: (string | number)[]; code: string }[]) {
+  return issues.map((issue) => ({ field: issue.path.join(".") || "root", code: issue.code }));
+}
+
 function getClientIpAddress(request: NextRequest) {
+  const requestIp = request.ip?.trim();
+  if (requestIp) {
+    return requestIp;
+  }
+
   const forwardedFor = request.headers.get("x-forwarded-for");
   const firstForwardedIp = forwardedFor?.split(",")[0]?.trim();
-
-  if (firstForwardedIp && firstForwardedIp.length > 0) {
+  if (firstForwardedIp) {
     return firstForwardedIp;
   }
 
@@ -20,7 +28,18 @@ function getClientIpAddress(request: NextRequest) {
     return realIp;
   }
 
-  return "unknown";
+  const fallbackFingerprint = [
+    request.headers.get("user-agent") ?? "",
+    request.headers.get("accept-language") ?? "",
+    request.headers.get("sec-ch-ua-platform") ?? "",
+  ];
+
+  if (fallbackFingerprint.every((value) => value === "")) {
+    logger.warn("Unable to determine client IP for contact webhook request");
+    return "unknown-client";
+  }
+
+  return `unknown-client-${createHash("sha256").update(fallbackFingerprint.join("|")).digest("hex").slice(0, 16)}`;
 }
 
 function secretsMatch(providedSecret: string, configuredSecret: string) {
@@ -34,8 +53,8 @@ function secretsMatch(providedSecret: string, configuredSecret: string) {
   return timingSafeEqual(provided, configured);
 }
 
-
 export async function POST(request: NextRequest) {
+  const clientIdentifier = getClientIpAddress(request);
   const webhookSecret = process.env.CONTACT_WEBHOOK_SECRET;
 
   if (!webhookSecret && process.env.NODE_ENV === "production") {
@@ -46,11 +65,14 @@ export async function POST(request: NextRequest) {
   if (webhookSecret) {
     const providedSecret = request.headers.get("x-webhook-secret") ?? "";
     if (!secretsMatch(providedSecret, webhookSecret)) {
+      if (contactWebhookAuthRateLimiter.isLimited(clientIdentifier)) {
+        return NextResponse.json({ error: "rate_limited" }, { status: 429, headers: { "Retry-After": "60" } });
+      }
       return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     }
   }
 
-  if (contactWebhookRateLimiter.isLimited(getClientIpAddress(request))) {
+  if (contactWebhookRateLimiter.isLimited(clientIdentifier)) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429, headers: { "Retry-After": "60" } });
   }
 
@@ -58,7 +80,7 @@ export async function POST(request: NextRequest) {
   const validatedPayload = webhookContactSchema.safeParse(rawPayload);
 
   if (!validatedPayload.success) {
-    logger.warn({ issues: validatedPayload.error.issues }, "Invalid contact webhook payload");
+    logger.warn({ issues: summarizeValidationIssues(validatedPayload.error.issues) }, "Invalid contact webhook payload");
     return NextResponse.json({ error: "invalid_payload" }, { status: 400 });
   }
 

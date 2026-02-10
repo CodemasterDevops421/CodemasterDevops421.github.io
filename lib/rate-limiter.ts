@@ -16,12 +16,13 @@ export class SlidingWindowRateLimiter {
   isLimited(key: string, nowMs = Date.now()) {
     const recentEvents = (this.eventsByKey.get(key) ?? []).filter((eventMs) => nowMs - eventMs < this.windowMs);
 
+    if (recentEvents.length === 0) {
+      this.eventsByKey.delete(key);
+    } else {
+      this.eventsByKey.set(key, recentEvents);
+    }
+
     if (recentEvents.length >= this.maxEvents) {
-      if (recentEvents.length === 0) {
-        this.eventsByKey.delete(key);
-      } else {
-        this.eventsByKey.set(key, recentEvents);
-      }
       return true;
     }
 

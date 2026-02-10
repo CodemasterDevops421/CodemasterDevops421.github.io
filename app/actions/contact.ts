@@ -6,6 +6,10 @@ import { contactFormSchema, webhookContactSchema } from "@/lib/contact";
 import { processContactInquiry } from "@/lib/contact-service";
 import { logger } from "@/lib/logger";
 
+function summarizeValidationIssues(issues: { path: (string | number)[]; code: string }[]) {
+  return issues.map((issue) => ({ field: issue.path.join(".") || "root", code: issue.code }));
+}
+
 export async function submitContactForm(formData: FormData): Promise<void> {
   const parsedContactForm = contactFormSchema.safeParse({
     name: formData.get("name"),
@@ -18,7 +22,7 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   });
 
   if (!parsedContactForm.success) {
-    logger.warn({ issues: parsedContactForm.error.issues }, "Rejected contact form submission");
+    logger.warn({ issues: summarizeValidationIssues(parsedContactForm.error.issues) }, "Rejected contact form submission");
     return;
   }
 
@@ -30,7 +34,10 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   });
 
   if (!parsedWebhookPayload.success) {
-    logger.error({ issues: parsedWebhookPayload.error.issues }, "Generated contact payload failed schema validation");
+    logger.error(
+      { issues: summarizeValidationIssues(parsedWebhookPayload.error.issues) },
+      "Generated contact payload failed schema validation",
+    );
     return;
   }
 

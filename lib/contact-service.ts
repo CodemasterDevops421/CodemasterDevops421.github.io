@@ -18,7 +18,6 @@ export function processContactInquiry(inquiry: WebhookContactInput): ContactProc
       timeline: inquiry.timeline,
       budget: inquiry.budget,
       company: inquiry.company,
-      name: inquiry.name,
     },
     "Received contact inquiry",
   );
