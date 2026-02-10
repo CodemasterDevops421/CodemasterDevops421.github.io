@@ -12,10 +12,10 @@ export function AboutSection() {
     <section className="container space-y-10 py-24" id="about">
       <Reveal>
         <SectionHeading
-        eyebrow="About"
-        title="DevOps engineer focused on secure automation and reliable delivery"
-        description="Senior DevOps and Cloud Security Engineer with 9+ years of experience across AWS, Azure, CI/CD, infrastructure automation, and Kubernetes operations."
-      />
+          eyebrow="About"
+          title="DevOps engineer focused on secure automation and reliable delivery"
+          description="Senior DevOps and Cloud Security Engineer with 10+ years of experience across AWS, Azure, CI/CD, infrastructure automation, and Kubernetes operations."
+        />
       </Reveal>
       <div className="grid gap-8 md:grid-cols-2">
         <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
