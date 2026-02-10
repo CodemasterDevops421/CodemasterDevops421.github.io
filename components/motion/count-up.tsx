@@ -1,7 +1,7 @@
 "use client";
 
 import { animate, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type CountUpProps = {
   className?: string;
@@ -13,7 +13,7 @@ type CountUpProps = {
 };
 
 export function CountUp({ className, decimals = 0, duration = 1.4, prefix = "", suffix = "", value }: CountUpProps) {
-  const formatValue = (nextValue: number) => nextValue.toFixed(decimals);
+  const formatValue = useCallback((nextValue: number) => nextValue.toFixed(decimals), [decimals]);
 
   const [displayValue, setDisplayValue] = useState(() => formatValue(0));
   const ref = useRef<HTMLSpanElement | null>(null);
@@ -21,6 +21,7 @@ export function CountUp({ className, decimals = 0, duration = 1.4, prefix = "", 
 
   useEffect(() => {
     if (!inView) {
+      setDisplayValue(formatValue(0));
       return;
     }
 
@@ -33,7 +34,7 @@ export function CountUp({ className, decimals = 0, duration = 1.4, prefix = "", 
     });
 
     return () => controls.stop();
-  }, [decimals, duration, inView, value]);
+  }, [duration, formatValue, inView, value]);
 
   return (
     <span ref={ref} className={className}>

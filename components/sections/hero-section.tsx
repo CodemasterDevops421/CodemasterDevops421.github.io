@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { ArrowUpRight, Github, Linkedin, Mail, ShieldCheck, Sparkles, Workflow, Youtube } from "lucide-react";
 
 import { CountUp } from "@/components/motion/count-up";
@@ -40,15 +41,35 @@ const itemVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
 };
 
+const heroBackgroundImage =
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=80";
+
 export function HeroSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.48, 0.3, 0.48]);
+
   return (
     <motion.section
+      ref={sectionRef}
       className="container relative grid gap-12 overflow-hidden py-24 md:grid-cols-[1.2fr_1fr] md:items-center"
       id="hero"
       variants={containerVariants}
       initial="hidden"
       animate="show"
     >
+      <motion.div className="pointer-events-none absolute inset-0 -z-20 will-change-transform" style={{ y: backgroundY }}>
+        <div
+          className="absolute -inset-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+          aria-hidden="true"
+        />
+      </motion.div>
+      <motion.div className="pointer-events-none absolute inset-0 -z-10" style={{ opacity: overlayOpacity }}>
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-950/20 via-background/75 to-violet-950/20 dark:from-cyan-900/35 dark:via-background/85 dark:to-violet-900/35" />
+      </motion.div>
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-violet-400/20 blur-3xl" />
