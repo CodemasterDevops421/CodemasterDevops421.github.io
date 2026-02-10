@@ -9,9 +9,6 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   headers: async () => [
     {
       source: "/(.*)",

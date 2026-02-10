@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseMetadata } from "@/lib/seo";
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
         <ThemeProvider>
+          <ScrollProgress />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
