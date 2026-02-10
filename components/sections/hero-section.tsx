@@ -109,7 +109,7 @@ export function HeroSection() {
             transition={{ type: "spring", stiffness: 220, damping: 20 }}
           >
             <img
-              src="https://avatars.githubusercontent.com/CodemasterDevops421?size=800"
+              src="src="/chaitanya-profile.jpg"
               alt="Chaitanya profile"
               className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
               loading="eager"
