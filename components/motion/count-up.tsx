@@ -13,7 +13,9 @@ type CountUpProps = {
 };
 
 export function CountUp({ className, decimals = 0, duration = 1.4, prefix = "", suffix = "", value }: CountUpProps) {
-  const [displayValue, setDisplayValue] = useState("0");
+  const formatValue = (nextValue: number) => nextValue.toFixed(decimals);
+
+  const [displayValue, setDisplayValue] = useState(() => formatValue(0));
   const ref = useRef<HTMLSpanElement | null>(null);
   const inView = useInView(ref, { once: true, margin: "-20% 0px" });
 
@@ -26,7 +28,7 @@ export function CountUp({ className, decimals = 0, duration = 1.4, prefix = "", 
       duration,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (latest: number) => {
-        setDisplayValue(latest.toFixed(decimals));
+        setDisplayValue(formatValue(latest));
       },
     });
 
