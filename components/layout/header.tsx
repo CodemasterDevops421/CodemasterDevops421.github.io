@@ -34,13 +34,11 @@ export function Header() {
           return;
         }
 
-        visibleEntries
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-          .forEach((entry) => {
-            if (entry.target.id) {
-              setActiveHash(`#${entry.target.id}`);
-            }
-          });
+        const top = visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (top?.target.id) {
+          setActiveHash(`#${top.target.id}`);
+        }
       },
       {
         rootMargin: "-35% 0px -55% 0px",
