@@ -10,7 +10,7 @@ export const contactFormSchema = z.object({
   budget: z.enum(CONTACT_BUDGET_OPTIONS),
   timeline: z.enum(CONTACT_TIMELINE_OPTIONS),
   message: z.string().trim().min(20).max(3000),
-  website: z.string().trim().max(0).optional(),
+  website: z.string().trim().optional(),
 });
 
 export const webhookContactSchema = contactFormSchema.extend({

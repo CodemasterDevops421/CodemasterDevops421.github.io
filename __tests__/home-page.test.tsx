@@ -10,7 +10,7 @@ describe("HomePage", () => {
 
     errorSpy.mockRestore();
 
-    expect(html).toContain("Melam Chaitanya Kumar builds secure, observable delivery platforms");
+    expect(html).toContain("that ship faster and fail less.");
     expect(html).toContain("Production DevOps leadership");
     expect(html).toContain("Resume-aligned initiatives");
     expect(html).toContain("Resume skill matrix");
